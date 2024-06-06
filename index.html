@@ -6757,20 +6757,12 @@
                               data-formid="202"
                               method="post"
                               enctype="multipart/form-data"
-                              action="/"
+                              action="javascript:void(0);"
+                              method="POST"
                               data-token="ff2f3efd35a319355ab9ccf94c9c63de"
                             >
-                              <noscript class="wpforms-error-noscript"
-                                >Please enable JavaScript in your browser to
-                                complete this form.</noscript
-                              >
-                              <div
-                                class="wpforms-hidden"
-                                id="wpforms-error-noscript"
-                              >
-                                Please enable JavaScript in your browser to
-                                complete this form.
-                              </div>
+                              
+                             
                               <div class="wpforms-field-container">
                                 <div
                                   id="wpforms-202-field_1-container"
@@ -6791,7 +6783,7 @@
                                   <input
                                     type="text"
                                     id="wpforms-202-field_1"
-                                    class="wpforms-field-medium wpforms-field-required"
+                                    class="wpforms-field-medium wpforms-field-required w-full"
                                     name="wpforms[fields][1]"
                                     aria-errormessage="wpforms-202-field_1-error"
                                     required
@@ -6816,7 +6808,7 @@
                                   <input
                                     type="email"
                                     id="wpforms-202-field_2"
-                                    class="wpforms-field-medium wpforms-field-required"
+                                    class="wpforms-field-medium wpforms-field-required  w-full"
                                     name="wpforms[fields][2]"
                                     spellcheck="false"
                                     aria-errormessage="wpforms-202-field_2-error"
@@ -6836,7 +6828,7 @@
                                   <input
                                     type="text"
                                     id="wpforms-202-field_3"
-                                    class="wpforms-field-medium"
+                                    class="wpforms-field-medium  w-full"
                                     name="wpforms[fields][3]"
                                     aria-errormessage="wpforms-202-field_3-error"
                                   />
@@ -6859,10 +6851,12 @@
                                   </label>
                                   <textarea
                                     id="wpforms-202-field_4"
-                                    class="wpforms-field-medium wpforms-field-required"
+                                    class="wpforms-field-medium wpforms-field-required w-full"
                                     name="wpforms[fields][4]"
                                     aria-errormessage="wpforms-202-field_4-error"
                                     required
+                                    cols="40"
+                                    rows="5"
                                   ></textarea>
                                 </div>
                               </div>
@@ -7926,6 +7920,15 @@
       href="https://codesfix.net/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.19.4"
       media="all"
     />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      document.getElementById('wpforms-form-202').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        Swal.fire("Thank you for contacting us!");
+        document.getElementById('wpforms-form-202').reset();
+      });
+    </script>
     <script id="astra-theme-js-js-extra">
       var astra = {
         break_point: "921",
