@@ -2,37 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DevLogic Technologies</title>
   <style>
     :root {
-      --blue: #002147;
-      --orange: #FF7A00;
-      --white: #ffffff;
-      --gray: #f9f9f9;
-      --text-dark: #333;
+      --primary-color: #002147;
+      --secondary-color: #FF7A00;
+      --background-color: #ffffff;
+      --text-color: #333333;
+      --light-gray: #f9f9f9;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      background: var(--white);
-      color: var(--text-dark);
+      background-color: var(--background-color);
+      color: var(--text-color);
       line-height: 1.6;
     }
 
     header {
-      background: var(--white);
+      background-color: var(--background-color);
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 1000;
     }
 
     .container {
@@ -49,7 +48,7 @@
     }
 
     nav a {
-      color: var(--blue);
+      color: var(--primary-color);
       margin: 0 15px;
       text-decoration: none;
       font-weight: 600;
@@ -57,7 +56,7 @@
     }
 
     nav a:hover {
-      color: var(--orange);
+      color: var(--secondary-color);
     }
 
     section {
@@ -66,8 +65,8 @@
 
     .hero {
       text-align: center;
-      background: linear-gradient(135deg, var(--blue), var(--orange));
-      color: var(--white);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--background-color);
       padding: 120px 20px;
     }
 
@@ -81,8 +80,8 @@
     }
 
     .btn {
-      background: var(--orange);
-      color: var(--white);
+      background: var(--secondary-color);
+      color: var(--background-color);
       padding: 12px 30px;
       border-radius: 5px;
       text-decoration: none;
@@ -97,7 +96,35 @@
       text-align: center;
       margin-bottom: 50px;
       font-size: 2.5rem;
-      color: var(--blue);
+      color: var(--primary-color);
+    }
+
+    .services, .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service, .project {
+      background: var(--light-gray);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .service h3, .project h3 {
+      color: var(--secondary-color);
+      margin-bottom: 10px;
+    }
+
+    .project a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .project a:hover {
+      color: var(--secondary-color);
     }
 
     .about p, .contact p {
@@ -105,35 +132,6 @@
       margin: 0 auto;
       text-align: center;
       font-size: 1.1rem;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .portfolio-card {
-      background: var(--gray);
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .portfolio-card h3 {
-      color: var(--orange);
-      margin-bottom: 10px;
-    }
-
-    .portfolio-card a {
-      color: var(--blue);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .portfolio-card a:hover {
-      color: var(--orange);
     }
 
     form {
@@ -153,8 +151,8 @@
     }
 
     button {
-      background: var(--blue);
-      color: var(--white);
+      background: var(--primary-color);
+      color: var(--background-color);
       padding: 12px;
       border: none;
       border-radius: 5px;
@@ -164,18 +162,18 @@
     }
 
     button:hover {
-      background: var(--orange);
+      background: var(--secondary-color);
     }
 
     footer {
       text-align: center;
-      background: var(--blue);
-      color: var(--white);
+      background: var(--primary-color);
+      color: var(--background-color);
       padding: 20px;
     }
 
     footer a {
-      color: var(--orange);
+      color: var(--secondary-color);
       text-decoration: none;
     }
 
@@ -199,49 +197,74 @@
   <header>
     <div class="container">
       <div class="logo">
-        <img src="devlogic logo fixed.png" alt="DevLogic Logo">
+        <img src="devlogic-logo.png" alt="DevLogic Logo">
       </div>
       <nav>
-        <a href="#about">About</a>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
+        <a href="#about">About Us</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <h1>Welcome to DevLogic Technologies</h1>
-    <p>We craft professional websites and applications with precision and creativity.</p>
-    <a href="#contact" class="btn">Let’s Talk</a>
+  <section class="hero" id="home">
+    <h1>Innovative Digital Solutions</h1>
+    <p>Empowering businesses through cutting-edge technology and creative design.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Web Development</h3>
+        <p>Building responsive and robust websites tailored to your business needs.</p>
+      </div>
+      <div class="service">
+        <h3>Mobile App Development</h3>
+        <p>Creating intuitive mobile applications for both Android and iOS platforms.</p>
+      </div>
+      <div class="service">
+        <h3>UI/UX Design</h3>
+        <p>Designing user-centric interfaces that enhance user experience and engagement.</p>
+      </div>
+      <div class="service">
+        <h3>Digital Marketing</h3>
+        <p>Strategic marketing solutions to boost your online presence and reach.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2 class="section-title">Our Portfolio</h2>
+    <div class="portfolio">
+      <div class="project">
+        <h3>Tarter USA</h3>
+        <p>Leading manufacturer of farm & ranch equipment with a clean, modern web presence.</p>
+        <a href="https://tarterusa.com/" target="_blank">View Website</a>
+      </div>
+      <div class="project">
+        <h3>Rite Plumbing NYC</h3>
+        <p>Trusted plumbing services provider in NYC showcasing their services online.</p>
+        <a href="https://riteplumbingnyc.com/" target="_blank">View Website</a>
+      </div>
+      <div class="project">
+        <h3>Peak Profit Funding</h3>
+        <p>A proprietary trading firm empowering traders through innovative tools.</p>
+        <a href="https://peakprofitfunding.com/" target="_blank">View Website</a>
+      </div>
+    </div>
   </section>
 
   <!-- About Us Section -->
   <section id="about">
     <h2 class="section-title">About Us</h2>
     <p>DevLogic Technologies is a Lahore-based web design and development agency helping businesses thrive online. With a focus on elegant UI/UX and clean code, we deliver scalable, responsive, and high-performance solutions tailored to your needs.</p>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2 class="section-title">Our Portfolio</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-card">
-        <h3>Tarter USA</h3>
-        <p>Leading manufacturer of farm & ranch equipment with a clean, modern web presence.</p>
-        <a href="https://tarterusa.com/" target="_blank">View Website</a>
-      </div>
-      <div class="portfolio-card">
-        <h3>Rite Plumbing NYC</h3>
-        <p>Trusted plumbing services provider in NYC showcasing their services online.</p>
-        <a href="https://riteplumbingnyc.com/" target="_blank">View Website</a>
-      </div>
-      <div class="portfolio-card">
-        <h3>Peak Profit Funding</h3>
-        <p>A proprietary trading firm empowering traders through innovative tools.</p>
-        <a href="https://peakprofitfunding.com/" target="_blank">View Website</a>
-      </div>
-    </div>
   </section>
 
   <!-- Contact Section -->
@@ -261,8 +284,11 @@
 
   <!-- Footer -->
   <footer>
-    &copy; 2025 DevLogic Technologies. All rights reserved. | <a href="#top">Back to Top</a>
+    &copy; 2025 DevLogic Technologies. All rights reserved. | <a href="#home">Back to Top</a>
   </footer>
 
 </body>
 </html>
+``
+::contentReference[oaicite:0]{index=0}
+ 
