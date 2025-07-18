@@ -1,27 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DevLogic Technologies | AI-Powered Digital Solutions</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevLogic - Digital Solutions</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-color: #002147;
-      --primary-light: #003366;
       --secondary-color: #FF7A00;
-      --secondary-light: #FF9A3C;
-      --background-color: #ffffff;
-      --text-color: #333333;
-      --text-light: #666666;
+      --white: #ffffff;
       --light-gray: #f5f7fa;
-      --dark-gray: #e1e5eb;
-      --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      --shadow: 0 10px 30px rgba(0, 33, 71, 0.1);
-      --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      --dark-gray: #333333;
       --transition: all 0.3s ease;
     }
 
@@ -29,43 +19,29 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      background-color: var(--background-color);
-      color: var(--text-color);
+      background-color: var(--white);
+      color: var(--dark-gray);
       line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4 {
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    p {
-      color: var(--text-light);
     }
 
     /* Header */
     header {
-      background-color: rgba(255, 255, 255, 0.95);
-      box-shadow: var(--shadow);
-      position: sticky;
+      background-color: var(--white);
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(5px);
-      transition: var(--transition);
-    }
-
-    header.scrolled {
-      padding: 5px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .container {
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
       padding: 0 20px;
     }
 
@@ -73,58 +49,35 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
     }
 
-    .logo-text {
-      font-size: 1.8rem;
+    .logo {
+      font-size: 28px;
       font-weight: 700;
       color: var(--primary-color);
     }
 
-    .logo-text span {
+    .logo span {
       color: var(--secondary-color);
     }
 
-    nav {
-      display: flex;
-      align-items: center;
-    }
-
-    .nav-links {
+    nav ul {
       display: flex;
       list-style: none;
     }
 
-    .nav-links li {
+    nav ul li {
       margin-left: 30px;
-      position: relative;
     }
 
-    .nav-links a {
-      color: var(--primary-color);
+    nav ul li a {
       text-decoration: none;
+      color: var(--primary-color);
       font-weight: 500;
       transition: var(--transition);
-      position: relative;
     }
 
-    .nav-links a:after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background: var(--secondary-color);
-      bottom: -5px;
-      left: 0;
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover:after {
-      width: 100%;
-    }
-
-    .nav-links a:hover {
+    nav ul li a:hover {
       color: var(--secondary-color);
     }
 
@@ -149,82 +102,30 @@
     .hamburger {
       display: none;
       cursor: pointer;
-      width: 30px;
-      height: 20px;
-      position: relative;
-      z-index: 1001;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 100%;
-      height: 3px;
-      background: var(--primary-color);
-      position: absolute;
-      left: 0;
-      transition: var(--transition);
-    }
-
-    .hamburger span:nth-child(1) {
-      top: 0;
-    }
-
-    .hamburger span:nth-child(2) {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .hamburger span:nth-child(3) {
-      bottom: 0;
-    }
-
-    .hamburger.active span:nth-child(1) {
-      top: 50%;
-      transform: translateY(-50%) rotate(45deg);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-      bottom: 50%;
-      transform: translateY(50%) rotate(-45deg);
     }
 
     /* Hero Section */
     .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 180px 0 120px;
-      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(rgba(0, 33, 71, 0.8), rgba(0, 33, 71, 0.8)), 
+                  url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80') center/cover no-repeat;
       color: white;
       text-align: center;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80') center/cover;
-      opacity: 0.15;
+      padding-top: 80px;
     }
 
     .hero-content {
-      position: relative;
       max-width: 800px;
       margin: 0 auto;
-      padding: 0 20px;
-      animation: fadeInUp 1s ease;
     }
 
     .hero h1 {
       font-size: 3.5rem;
-      margin-bottom: 20px;
+      font-weight: 700;
       line-height: 1.2;
+      margin-bottom: 20px;
     }
 
     .hero h1 span {
@@ -237,50 +138,29 @@
       color: rgba(255, 255, 255, 0.9);
     }
 
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
     .btn {
+      display: inline-block;
       padding: 15px 35px;
-      border-radius: 50px;
+      background-color: var(--secondary-color);
+      color: white;
       text-decoration: none;
+      border-radius: 5px;
       font-weight: 600;
       transition: var(--transition);
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: var(--secondary-color);
-      color: white;
       box-shadow: 0 5px 15px rgba(255, 122, 0, 0.4);
     }
 
-    .btn-primary:hover {
+    .btn:hover {
       background: white;
       color: var(--secondary-color);
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(255, 122, 0, 0.5);
     }
 
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: var(--primary-color);
-      transform: translateY(-5px);
-    }
-
     /* Stats Section */
     .stats {
       padding: 80px 0;
-      background: white;
+      background-color: var(--white);
     }
 
     .stats-container {
@@ -303,95 +183,31 @@
 
     .stat-label {
       font-size: 1.1rem;
-      color: var(--text-light);
-    }
-
-    /* AI Section */
-    .ai-section {
-      background: var(--light-gray);
-      padding: 100px 0;
-      position: relative;
-    }
-
-    .ai-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .ai-image {
-      position: relative;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .ai-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .ai-image::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 5px solid var(--secondary-color);
-      border-radius: 15px;
-      top: 20px;
-      left: 20px;
-      z-index: -1;
-    }
-
-    .ai-content h2 {
-      font-size: 2.5rem;
-      color: var(--primary-color);
-      margin-bottom: 20px;
-    }
-
-    .ai-content p {
-      margin-bottom: 20px;
-    }
-
-    .ai-features {
-      margin-top: 30px;
-    }
-
-    .ai-feature {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 20px;
-    }
-
-    .ai-feature-icon {
-      width: 50px;
-      height: 50px;
-      background: rgba(255, 122, 0, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--secondary-color);
-      font-size: 1.5rem;
-      margin-right: 20px;
-      flex-shrink: 0;
-    }
-
-    .ai-feature-text h4 {
-      font-size: 1.3rem;
-      color: var(--primary-color);
-      margin-bottom: 5px;
-    }
-
-    .ai-feature-text p {
-      color: var(--text-light);
+      color: var(--dark-gray);
     }
 
     /* Services Section */
     .services {
-      background: var(--light-gray);
+      padding: 100px 0;
+      background-color: var(--light-gray);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: var(--dark-gray);
     }
 
     .services-grid {
@@ -402,34 +218,16 @@
 
     .service-card {
       background: white;
-      border-radius: 15px;
-      padding: 40px 30px;
+      border-radius: 10px;
+      padding: 30px;
       text-align: center;
       transition: var(--transition);
-      box-shadow: var(--card-shadow);
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: var(--secondary-color);
-      transition: var(--transition);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
 
     .service-card:hover {
       transform: translateY(-10px);
-      box-shadow: var(--shadow);
-    }
-
-    .service-card:hover::before {
-      height: 10px;
+      box-shadow: 0 10px 30px rgba(0, 33, 71, 0.1);
     }
 
     .service-icon {
@@ -449,7 +247,6 @@
     .service-card:hover .service-icon {
       background: var(--secondary-color);
       color: white;
-      transform: rotateY(180deg);
     }
 
     .service-card h3 {
@@ -460,31 +257,15 @@
 
     .service-card p {
       margin-bottom: 20px;
-    }
-
-    .learn-more {
-      color: var(--secondary-color);
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      transition: var(--transition);
-    }
-
-    .learn-more i {
-      margin-left: 5px;
-      transition: var(--transition);
-    }
-
-    .learn-more:hover {
-      color: var(--primary-color);
-    }
-
-    .learn-more:hover i {
-      transform: translateX(5px);
+      color: var(--dark-gray);
     }
 
     /* Portfolio Section */
+    .portfolio {
+      padding: 100px 0;
+      background-color: var(--white);
+    }
+
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -492,16 +273,16 @@
     }
 
     .portfolio-card {
-      border-radius: 15px;
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: var(--card-shadow);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       transition: var(--transition);
       position: relative;
     }
 
     .portfolio-card:hover {
       transform: translateY(-10px);
-      box-shadow: var(--shadow);
+      box-shadow: 0 10px 30px rgba(0, 33, 71, 0.1);
     }
 
     .portfolio-image {
@@ -540,17 +321,6 @@
       opacity: 1;
     }
 
-    .portfolio-tag {
-      background: var(--secondary-color);
-      color: white;
-      padding: 5px 15px;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      align-self: flex-start;
-    }
-
     .portfolio-info h3 {
       color: white;
       margin-bottom: 10px;
@@ -584,139 +354,10 @@
       transform: translateX(5px);
     }
 
-    /* Process Section */
-    .process {
-      background: var(--primary-color);
-      color: white;
-    }
-
-    .process .section-title h2 {
-      color: white;
-    }
-
-    .process .section-title p {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      counter-reset: process-counter;
-    }
-
-    .process-step {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      padding: 40px 30px;
-      position: relative;
-      transition: var(--transition);
-    }
-
-    .process-step:hover {
-      transform: translateY(-10px);
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    .process-step::before {
-      counter-increment: process-counter;
-      content: counter(process-counter);
-      position: absolute;
-      top: -25px;
-      left: 30px;
-      width: 50px;
-      height: 50px;
-      background: var(--secondary-color);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-
-    .process-step h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-    }
-
-    .process-step p {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    /* Testimonials Section */
-    .testimonials {
-      background: var(--light-gray);
-    }
-
-    .testimonials-slider {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .testimonial-card {
-      background: white;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: var(--card-shadow);
-      text-align: center;
-      margin: 20px;
-      position: relative;
-    }
-
-    .testimonial-card::before {
-      content: '\201C';
-      font-size: 5rem;
-      color: rgba(0, 33, 71, 0.05);
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      line-height: 1;
-    }
-
-    .client-avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto 20px;
-      border: 5px solid var(--secondary-color);
-    }
-
-    .client-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .client-rating {
-      color: var(--secondary-color);
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-    }
-
-    .client-testimonial {
-      font-size: 1.1rem;
-      font-style: italic;
-      margin-bottom: 20px;
-      color: var(--text-color);
-    }
-
-    .client-info h4 {
-      color: var(--primary-color);
-      margin-bottom: 5px;
-    }
-
-    .client-info p {
-      color: var(--text-light);
-      font-size: 0.9rem;
-    }
-
     /* Contact Section */
     .contact {
-      background: var(--light-gray);
+      padding: 100px 0;
+      background-color: var(--light-gray);
     }
 
     .contact-container {
@@ -737,26 +378,14 @@
       gap: 20px;
       padding: 25px;
       background: white;
-      border-radius: 15px;
+      border-radius: 10px;
       transition: var(--transition);
-      box-shadow: var(--card-shadow);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
 
     .contact-card:hover {
-      background: var(--primary-color);
       transform: translateY(-5px);
-      box-shadow: var(--shadow);
-    }
-
-    .contact-card:hover .contact-icon {
-      background: white;
-      color: var(--secondary-color);
-    }
-
-    .contact-card:hover h4,
-    .contact-card:hover p,
-    .contact-card:hover a {
-      color: white;
+      box-shadow: 0 10px 30px rgba(0, 33, 71, 0.1);
     }
 
     .contact-icon {
@@ -770,28 +399,25 @@
       justify-content: center;
       font-size: 1.5rem;
       flex-shrink: 0;
-      transition: var(--transition);
     }
 
     .contact-details h4 {
       font-size: 1.3rem;
       color: var(--primary-color);
       margin-bottom: 10px;
-      transition: var(--transition);
     }
 
     .contact-details p, 
     .contact-details a {
-      color: var(--text-light);
-      transition: var(--transition);
+      color: var(--dark-gray);
       text-decoration: none;
     }
 
     .contact-form {
       background: white;
       padding: 40px;
-      border-radius: 15px;
-      box-shadow: var(--shadow);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
 
     .form-group {
@@ -808,8 +434,8 @@
     .form-control {
       width: 100%;
       padding: 15px;
-      border: 1px solid var(--dark-gray);
-      border-radius: 10px;
+      border: 1px solid var(--light-gray);
+      border-radius: 5px;
       font-size: 1rem;
       transition: var(--transition);
     }
@@ -830,7 +456,7 @@
       color: white;
       border: none;
       padding: 15px 30px;
-      border-radius: 50px;
+      border-radius: 5px;
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
@@ -850,7 +476,6 @@
       background: var(--primary-color);
       color: white;
       padding: 80px 0 30px;
-      position: relative;
     }
 
     .footer-content {
@@ -863,6 +488,7 @@
     .footer-about h3 {
       font-size: 1.8rem;
       margin-bottom: 20px;
+      color: white;
     }
 
     .footer-about h3 span {
@@ -899,6 +525,7 @@
     .footer-links h3 {
       font-size: 1.3rem;
       margin-bottom: 25px;
+      color: white;
       position: relative;
       padding-bottom: 10px;
     }
@@ -973,7 +600,7 @@
     }
 
     .newsletter-btn:hover {
-      background: var(--secondary-light);
+      background: #e06b00;
     }
 
     .footer-bottom {
@@ -1028,77 +655,10 @@
       transform: translateY(-5px);
     }
 
-    /* Section Title */
-    .section-title {
-      text-align: center;
-      margin-bottom: 60px;
-      position: relative;
-    }
-
-    .section-title h2 {
-      font-size: 2.5rem;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-    }
-
-    .section-title .title-bg {
-      position: absolute;
-      font-size: 6rem;
-      font-weight: 900;
-      color: rgba(0, 33, 71, 0.03);
-      top: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: -1;
-      white-space: nowrap;
-    }
-
-    .section-title p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0) rotate(0deg);
-      }
-      50% {
-        transform: translateY(-20px) rotate(10deg);
-      }
-      100% {
-        transform: translateY(0) rotate(0deg);
-      }
-    }
-
     /* Responsive Styles */
     @media (max-width: 992px) {
-      .ai-container,
-      .about-content,
       .contact-container {
         grid-template-columns: 1fr;
-      }
-
-      .ai-image,
-      .about-image {
-        order: -1;
-      }
-
-      .section-title .title-bg {
-        font-size: 4.5rem;
-        top: -15px;
       }
 
       .hero h1 {
@@ -1111,62 +671,12 @@
         display: block;
       }
 
-      .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        max-width: 400px;
-        height: 100vh;
-        background: white;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: var(--transition);
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-      }
-
-      .nav-links.active {
-        right: 0;
-      }
-
-      .nav-links li {
-        margin: 15px 0;
-        margin-left: 0;
-      }
-
-      .cta-button {
-        margin: 20px 0 0;
+      nav ul {
+        display: none;
       }
 
       .hero h1 {
         font-size: 2.2rem;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .section-title h2 {
-        font-size: 2rem;
-      }
-
-      .section-title .title-bg {
-        font-size: 3.5rem;
-      }
-
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .process-steps {
-        grid-template-columns: 1fr;
       }
 
       .stats-container {
@@ -1177,11 +687,15 @@
       .stat-item {
         margin-bottom: 30px;
       }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 576px) {
       .hero {
-        padding: 150px 0 100px;
+        padding: 120px 0 80px;
       }
 
       .hero h1 {
@@ -1190,14 +704,6 @@
 
       .section-title h2 {
         font-size: 1.8rem;
-      }
-
-      .section-title .title-bg {
-        font-size: 3rem;
-      }
-
-      .about-stats {
-        grid-template-columns: 1fr;
       }
 
       .footer-content {
@@ -1221,37 +727,28 @@
   <!-- Header -->
   <header id="header">
     <div class="container header-container">
-      <div class="logo-text">Dev<span>Logic</span></div>
-      
+      <div class="logo">Dev<span>Logic</span></div>
       <nav>
-        <ul class="nav-links">
+        <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#ai">AI Solutions</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li><a href="#contact" class="cta-button">Get Started</a></li>
         </ul>
       </nav>
-      
       <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+        <i class="fas fa-bars"></i>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
-    <div class="hero-content">
+    <div class="container hero-content">
       <h1>INNOVATIVE <span>DIGITAL SOLUTIONS</span> FOR MODERN BUSINESSES</h1>
-      <p>We craft exceptional digital experiences powered by AI that drive growth, engagement, and success for your brand.</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">Get Started</a>
-        <a href="#portfolio" class="btn btn-secondary">View Our Work</a>
-      </div>
+      <p>Empowering businesses through cutting-edge technology and creative design.</p>
+      <a href="#contact" class="btn">Get in Touch</a>
     </div>
   </section>
 
@@ -1275,60 +772,12 @@
     </div>
   </section>
 
-  <!-- AI Section -->
-  <section class="ai-section" id="ai">
-    <div class="container">
-      <div class="ai-container">
-        <div class="ai-image">
-          <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80" alt="AI Robot">
-        </div>
-        <div class="ai-content">
-          <h2>AI-Powered Digital Transformation</h2>
-          <p>At DevLogic, we harness the power of artificial intelligence to create smarter, more efficient digital solutions that give your business a competitive edge.</p>
-          
-          <div class="ai-features">
-            <div class="ai-feature">
-              <div class="ai-feature-icon">
-                <i class="fas fa-brain"></i>
-              </div>
-              <div class="ai-feature-text">
-                <h4>Machine Learning</h4>
-                <p>Our AI solutions learn and adapt to deliver personalized experiences for your customers.</p>
-              </div>
-            </div>
-            
-            <div class="ai-feature">
-              <div class="ai-feature-icon">
-                <i class="fas fa-robot"></i>
-              </div>
-              <div class="ai-feature-text">
-                <h4>Automation</h4>
-                <p>Streamline operations and reduce costs with our intelligent automation solutions.</p>
-              </div>
-            </div>
-            
-            <div class="ai-feature">
-              <div class="ai-feature-icon">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <div class="ai-feature-text">
-                <h4>Predictive Analytics</h4>
-                <p>Make data-driven decisions with our advanced predictive modeling capabilities.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Services Section -->
   <section class="services" id="services">
     <div class="container">
       <div class="section-title">
-        <span class="title-bg">Services</span>
-        <h2>What We Offer</h2>
-        <p>We provide comprehensive digital solutions tailored to your business needs, helping you stand out in the competitive digital landscape.</p>
+        <h2>Our Services</h2>
+        <p>We provide comprehensive digital solutions tailored to your business needs.</p>
       </div>
       
       <div class="services-grid">
@@ -1336,36 +785,24 @@
           <div class="service-icon">
             <i class="fas fa-code"></i>
           </div>
-          <h3>AI Web Development</h3>
-          <p>Building responsive and robust websites with AI-powered features tailored to your business needs.</p>
-          <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+          <h3>Web Development</h3>
+          <p>Building responsive and robust websites tailored to your business needs.</p>
         </div>
         
         <div class="service-card">
           <div class="service-icon">
             <i class="fas fa-mobile-alt"></i>
           </div>
-          <h3>AI Mobile Apps</h3>
-          <p>Creating intuitive mobile applications with AI capabilities for both Android and iOS platforms.</p>
-          <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+          <h3>Mobile App Development</h3>
+          <p>Creating intuitive mobile applications for both Android and iOS platforms.</p>
         </div>
         
         <div class="service-card">
           <div class="service-icon">
             <i class="fas fa-paint-brush"></i>
           </div>
-          <h3>AI-Powered UI/UX</h3>
-          <p>Designing intelligent interfaces that adapt to user behavior and enhance engagement.</p>
-          <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-robot"></i>
-          </div>
-          <h3>AI Integration</h3>
-          <p>Strategic AI implementation to boost your business processes and customer interactions.</p>
-          <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+          <h3>UI/UX Design</h3>
+          <p>Designing user-centric interfaces that enhance user experience and engagement.</p>
         </div>
       </div>
     </div>
@@ -1375,20 +812,18 @@
   <section class="portfolio" id="portfolio">
     <div class="container">
       <div class="section-title">
-        <span class="title-bg">Portfolio</span>
-        <h2>Our Recent Work</h2>
-        <p>Explore our selection of successful projects that showcase our expertise and commitment to excellence.</p>
+        <h2>Our Portfolio</h2>
+        <p>Explore our selection of successful projects that showcase our expertise.</p>
       </div>
       
       <div class="portfolio-grid">
         <div class="portfolio-card">
           <div class="portfolio-image">
-            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="AI E-commerce Platform">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Tarter USA Project">
             <div class="portfolio-overlay">
-              <span class="portfolio-tag">AI E-commerce</span>
               <div class="portfolio-info">
-                <h3>SmartShop AI</h3>
-                <p>AI-powered product recommendations and personalized shopping experience</p>
+                <h3>Tarter USA</h3>
+                <p>Modern e-commerce platform for farm equipment manufacturer</p>
                 <a href="#" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
@@ -1397,12 +832,11 @@
         
         <div class="portfolio-card">
           <div class="portfolio-image">
-            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="AI Chatbot">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Rite Plumbing Project">
             <div class="portfolio-overlay">
-              <span class="portfolio-tag">AI Chatbot</span>
               <div class="portfolio-info">
-                <h3>ServiceBot AI</h3>
-                <p>Intelligent customer service chatbot with natural language processing</p>
+                <h3>Rite Plumbing NYC</h3>
+                <p>Service website with booking system for plumbing company</p>
                 <a href="#" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
@@ -1411,89 +845,14 @@
         
         <div class="portfolio-card">
           <div class="portfolio-image">
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="AI Analytics Dashboard">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Peak Profit Funding Project">
             <div class="portfolio-overlay">
-              <span class="portfolio-tag">AI Analytics</span>
               <div class="portfolio-info">
-                <h3>InsightAI Dashboard</h3>
-                <p>Predictive analytics platform with real-time business intelligence</p>
+                <h3>Peak Profit Funding</h3>
+                <p>Trading platform with real-time analytics and reporting</p>
                 <a href="#" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process Section -->
-  <section class="process" id="process">
-    <div class="container">
-      <div class="section-title">
-        <span class="title-bg">Process</span>
-        <h2>Our AI Development Workflow</h2>
-        <p>We follow a proven methodology to ensure your AI project's success from concept to launch.</p>
-      </div>
-      
-      <div class="process-steps">
-        <div class="process-step">
-          <h3>Data Discovery</h3>
-          <p>We analyze your business data to identify AI opportunities and requirements.</p>
-        </div>
-        
-        <div class="process-step">
-          <h3>Model Planning</h3>
-          <p>Our team creates a detailed AI model architecture and development roadmap.</p>
-        </div>
-        
-        <div class="process-step">
-          <h3>Data Preparation</h3>
-          <p>We clean, process, and prepare your data for optimal AI model training.</p>
-        </div>
-        
-        <div class="process-step">
-          <h3>Model Training</h3>
-          <p>Our AI engineers train models using advanced machine learning techniques.</p>
-        </div>
-        
-        <div class="process-step">
-          <h3>Testing & Validation</h3>
-          <p>We rigorously test AI models for accuracy, bias, and performance.</p>
-        </div>
-        
-        <div class="process-step">
-          <h3>Deployment & Monitoring</h3>
-          <p>After deployment, we provide ongoing AI model monitoring and refinement.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="testimonials" id="testimonials">
-    <div class="container">
-      <div class="section-title">
-        <span class="title-bg">Testimonials</span>
-        <h2>What Our Clients Say</h2>
-        <p>Hear from businesses that have transformed their digital presence with our AI solutions.</p>
-      </div>
-      
-      <div class="testimonials-slider">
-        <div class="testimonial-card">
-          <div class="client-avatar">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client Avatar">
-          </div>
-          <div class="client-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p class="client-testimonial">"DevLogic's AI solutions transformed our customer service operations. Their intelligent chatbot reduced our support tickets by 60% while improving customer satisfaction scores. The team's expertise in machine learning was evident throughout the project."</p>
-          <div class="client-info">
-            <h4>Michael Johnson</h4>
-            <p>CEO, TechSolutions Inc.</p>
           </div>
         </div>
       </div>
@@ -1504,9 +863,8 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="section-title">
-        <span class="title-bg">Contact</span>
-        <h2>Get In Touch</h2>
-        <p>Ready to explore how AI can transform your business? Let's discuss your project.</p>
+        <h2>Contact Us</h2>
+        <p>Have a project in mind? Let's build something amazing together.</p>
       </div>
       
       <div class="contact-container">
@@ -1556,15 +914,15 @@
             
             <div class="form-group">
               <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" class="form-control" placeholder="AI Project Inquiry">
+              <input type="text" id="subject" name="subject" class="form-control" placeholder="Project Inquiry">
             </div>
             
             <div class="form-group">
               <label for="message">Your Message</label>
-              <textarea id="message" name="message" class="form-control" placeholder="Tell us about your AI project needs..." required></textarea>
+              <textarea id="message" name="message" class="form-control" placeholder="Tell us about your project..." required></textarea>
             </div>
             
-            <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+            <button type="submit" class="submit-btn">Send Message</button>
           </form>
         </div>
       </div>
@@ -1577,7 +935,7 @@
       <div class="footer-content">
         <div class="footer-about">
           <h3>Dev<span>Logic</span></h3>
-          <p>We are an AI-powered digital innovation studio dedicated to creating intelligent solutions that drive business growth and customer engagement.</p>
+          <p>We are a digital innovation studio dedicated to creating exceptional web and mobile experiences.</p>
           <div class="social-links">
             <a href="https://www.linkedin.com/company/dev-logic-technologies/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://www.upwork.com/agencies/devlogic/" class="social-link" target="_blank"><i class="fab fa-upwork"></i></a>
@@ -1588,37 +946,24 @@
           <h3>Quick Links</h3>
           <ul>
             <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-            <li><a href="#ai"><i class="fas fa-chevron-right"></i> AI Solutions</a></li>
             <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
             <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
             <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
           </ul>
         </div>
         
-        <div class="footer-links">
-          <h3>AI Services</h3>
-          <ul>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Machine Learning</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Natural Language Processing</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Computer Vision</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> Predictive Analytics</a></li>
-            <li><a href="#"><i class="fas fa-chevron-right"></i> AI Chatbots</a></li>
-          </ul>
-        </div>
-        
         <div class="footer-newsletter">
-          <h3>AI Insights</h3>
-          <p>Subscribe to our newsletter for the latest AI trends and business insights.</p>
+          <h3>Newsletter</h3>
+          <p>Subscribe to our newsletter for the latest updates and offers.</p>
           <form class="newsletter-form">
             <input type="email" placeholder="Your Email" class="newsletter-input" required>
             <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
           </form>
-          <p>We respect your privacy. Unsubscribe at any time.</p>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2025 <a href="#">DevLogic Technologies</a>. All Rights Reserved. | AI-Powered with <i class="fas fa-heart" style="color: #ff7a00;"></i> in Lahore</p>
+        <p>&copy; 2025 <a href="#">DevLogic Technologies</a>. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -1631,21 +976,12 @@
   <script>
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const nav = document.querySelector('nav ul');
     
     hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navLinks.classList.toggle('active');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
     });
-    
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-      });
-    });
-    
+
     // Header scroll effect
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
@@ -1655,7 +991,7 @@
         header.classList.remove('scrolled');
       }
     });
-    
+
     // Back to top button
     const backToTopButton = document.querySelector('.back-to-top');
     window.addEventListener('scroll', () => {
@@ -1665,14 +1001,14 @@
         backToTopButton.classList.remove('active');
       }
     });
-    
+
     backToTopButton.addEventListener('click', () => {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
     });
-    
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -1690,7 +1026,7 @@
         }
       });
     });
-    
+
     // Form submission
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', function(e) {
@@ -1704,41 +1040,20 @@
       
       // Here you would typically send the form data to a server
       // For this example, we'll just show an alert
-      alert(`Thank you, ${name}! Your message about "${subject}" has been sent. We'll contact you soon at ${email}.`);
+      alert(`Thank you, ${name}! Your message has been sent. We'll contact you soon at ${email}.`);
       
       // Reset the form
       contactForm.reset();
     });
-    
-    // Animation on scroll
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.service-card, .portfolio-card, .ai-image, .ai-content, .contact-card, .contact-form, .process-step, .stat-item');
-      
-      elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (elementPosition < windowHeight - 100) {
-          element.style.opacity = '1';
-          element.style.transform = 'translateY(0)';
-        }
-      });
-    };
-    
-    // Initialize elements with opacity 0 for animation
-    document.addEventListener('DOMContentLoaded', () => {
-      const elementsToAnimate = document.querySelectorAll('.service-card, .portfolio-card, .ai-image, .ai-content, .contact-card, .contact-form, .process-step, .stat-item');
-      elementsToAnimate.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      });
-      
-      // Initial check in case elements are already in view
-      animateOnScroll();
+
+    // Responsive menu handling
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        nav.style.display = 'flex';
+      } else {
+        nav.style.display = 'none';
+      }
     });
-    
-    window.addEventListener('scroll', animateOnScroll);
   </script>
 </body>
 </html>
